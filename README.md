@@ -38,17 +38,17 @@ CalculadoraCientificaPython/
    ```
 2. Crear y activar un entorno virtual  
     En Windows
-	```
+	```bash
 	python -m venv venv
 	venv\Scripts\activate
 	```  
 	En Linux/MacOS
-	```
+	```bash
 	python3 -m venv venv
 	source venv/bin/activate	
 	```
 3. Instalar las dependencias desde requirements.txt
-	```
+	```bash
 	pip install -r requirements.txt
 	```
 4. Ejecuta el archivo principal
@@ -62,6 +62,10 @@ CalculadoraCientificaPython/
 ## Flujo de trabajo con Git
 
 1. **Clonar** el repositorio.
+   ```bash
+   git clone https://github.com/usuario/CalculadoraCientificaPython.git
+   cd CalculadoraCientificaPython
+   ```
 2. Crear una **rama nueva** para tu módulo:
 
    ```bash
@@ -81,6 +85,6 @@ CalculadoraCientificaPython/
 5. Crear un **Pull Request** en GitHub para integrar tu aporte.
 
 
-## 👥 Colaboradores
+## Autores
 
-Este proyecto es desarrollado por estudiantes de la Universidad Nacional Rosario Castellanos Campus Coyoacan como práctica de **matemáticas aplicadas y control de versiones con Git**.
+Este proyecto es desarrollado por estudiantes de 8vo semestre (801 y 802) año escolar 2025-2 de la Universidad Nacional Rosario Castellanos Campus Magdalena Contreras.
