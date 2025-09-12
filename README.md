@@ -33,7 +33,7 @@ CalculadoraCientificaPython/
 1. Clona el repositorio
 
    ```bash
-   git clone https://github.com/usuario/CalculadoraCientificaPython.git
+   git clone https://github.com/UNRCProjects/CalculadoraCientificaPython.git
    cd CalculadoraCientificaPython
    ```
 2. Crear y activar un entorno virtual  
