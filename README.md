@@ -1,8 +1,10 @@
-# Calculadora Cientifica Python
+# Calculadora para Ciencia de Datos
 
-Este proyecto es una **calculadora en Python** que funciona en consola y pretende incluir de **aritmética, álgebra lineal, cálculo, gráficas de funciones, etc.** 
+Este proyecto es una calculadora desarrollada 100% en **Python + Streamlit**, diseñada como práctica para estudiantes de Ciencia de Datos.  
 
-Fue diseñado como un ejercicio de **colaboración con Git y GitHub**, donde cada grupo de estudiantes aporta un módulo matemático distinto.
+La aplicación permite realizar operaciones matemáticas, estadísticas, gráficas, procesamiento de imágenes en un entorno sencillo y visual.  
+
+Fue diseñado como un ejercicio de **colaboración con Git y GitHub**, donde cada grupo de estudiantes aporta un módulo distinto.
 
 ---
 
@@ -10,31 +12,36 @@ Fue diseñado como un ejercicio de **colaboración con Git y GitHub**, donde cad
 
 * Practicar el uso de **Git y GitHub** en un flujo de trabajo colaborativo.
 * Desarrollar código modular en **Python**.
-* Implementar operaciones matemáticas básicas y avanzadas.
-* Integrar todo en una aplicación de consola con menú interactivo.
+* Implementar operaciones utilizadas en el campo de ciencia de datos.
 
 ---
 
 ## Estructura del repositorio
 
 ```
-CalculadoraCientificaPython/
-├── modulos/
-├───└── aritmeticas.py
-├── requirements.txt
-├── main.py
-└── README.md
+DataScienceCalculator/
+│── .gitignore
+│── README.md
+│── requirements.txt
+│── app.py 
+├── backend/
+│ ├── init.py
+│ ├── aritmetica.py
+├── frontend/ # Capa de presentación (vistas en Streamlit)
+│ ├── init.py
+│ ├── home_view.py
+│ ├── aritmetica_view.py
 ```
 
 ---
 
-## ▶️ Cómo ejecutar el programa
+## Ejecutar en local
 
 1. Clona el repositorio
 
    ```bash
-   git clone https://github.com/UNRCProjects/CalculadoraCientificaPython.git
-   cd CalculadoraCientificaPython
+   git clone https://github.com/UNRCProjects/DataScienceCalculator.git
+   cd DataScienceCalculator
    ```
 2. Crear y activar un entorno virtual  
     En Windows
@@ -54,36 +61,11 @@ CalculadoraCientificaPython/
 4. Ejecuta el archivo principal
 
    ```bash
-   python main.py
+   streamlit run app.py
    ```
+5. Abrir en el navegador `http://localhost:8501`
 
 ---
-
-## Flujo de trabajo con Git
-
-1. **Clonar** el repositorio.
-   ```bash
-   git clone https://github.com/usuario/CalculadoraCientificaPython.git
-   cd CalculadoraCientificaPython
-   ```
-2. Crear una **rama nueva** para tu módulo:
-
-   ```bash
-   git checkout -b mi-modulo
-   ```
-3. Agregar tus cambios y hacer commit:
-
-   ```bash
-   git add .
-   git commit -m "Agrego módulo de ..."
-   ```
-4. Subir tu rama al repositorio remoto:
-
-   ```bash
-   git push origin mi-modulo
-   ```
-5. Crear un **Pull Request** en GitHub para integrar tu aporte.
-
 
 ## Autores
 
