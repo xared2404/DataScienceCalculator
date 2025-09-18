@@ -6,15 +6,11 @@ La aplicación permite realizar operaciones matemáticas, estadísticas, gráfic
 
 Fue diseñado como un ejercicio de **colaboración con Git y GitHub**, donde cada grupo de estudiantes aporta un módulo distinto.
 
----
-
 ## Objetivos del proyecto
 
 * Practicar el uso de **Git y GitHub** en un flujo de trabajo colaborativo.
 * Desarrollar código modular en **Python**.
 * Implementar operaciones utilizadas en el campo de ciencia de datos.
-
----
 
 ## Estructura del repositorio
 
@@ -32,8 +28,6 @@ DataScienceCalculator/
 │ ├── home_view.py
 │ ├── aritmetica_view.py
 ```
-
----
 
 ## Ejecutar en local
 
@@ -64,8 +58,6 @@ DataScienceCalculator/
    streamlit run app.py
    ```
 5. Abrir en el navegador `http://localhost:8501`
-
----
 
 ## Autores
 
