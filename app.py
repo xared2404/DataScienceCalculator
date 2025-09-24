@@ -16,13 +16,6 @@ if 'categoria' not in st.session_state:
 if 'subopcion' not in st.session_state:
     st.session_state['subopcion'] = 'Principal'
 
-# Forzar tema claro usando CSS
-st.markdown(
-    '''<style>
-    body, .stApp { background-color: #F5F6F7 !important; color: #18191A !important; }
-    .stSidebar { background-color: #FFFFFF !important; }
-    </style>''', unsafe_allow_html=True)
-
 # ====== BARRA LATERAL ======
 # st.sidebar.title("📂 Navegación")
 st.sidebar.image("assets/logo_unrc.png")
