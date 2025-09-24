@@ -7,5 +7,5 @@ def render():
     """)
     st.markdown("""
     **Autores (Por orden alfabético):**
-    - [Miguel Evangelista -- Profesor](https://github.com/mevangelista-alvarado)
+    - [Miguel Evangelista](https://github.com/mevangelista-alvarado)
     """)

@@ -22,7 +22,7 @@ def render():
     
     # Sección de módulos disponibles
     st.markdown("""
-        ### 📚 Módulos disponibles
+        ### Módulos disponibles
     """)
     st.markdown("""
     - 🧮 Áritmetica  
