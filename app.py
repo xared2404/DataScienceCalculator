@@ -1,5 +1,5 @@
 import streamlit as st
-from frontend.aritmetica import suma_view, division_view
+from frontend.aritmetica import mcd_view, mcm_view, primos_view, coprimos_view
 from frontend import home_view
 from frontend import autores_view
 
@@ -27,13 +27,19 @@ with st.sidebar.expander("🏠 Home", expanded=False):
     if st.button("Autores", key="autores_btn"):
         st.session_state['categoria'] = "Autores"
 
-with st.sidebar.expander("🧮 Aritmética", expanded=False):
-    if st.button("Suma", key="suma_btn"):
+with st.sidebar.expander("🧮 Aritmética", expanded=True):
+    if st.button("Máximo Común Divisor (MCD)", key="mcd_btn"):
         st.session_state['categoria'] = "Aritmética"
-        st.session_state['subopcion'] = "Suma"
-    if st.button("División", key="division_btn"):
+        st.session_state['subopcion'] = "MCD"
+    if st.button("Mínimo Común Multiplo (MCM)", key="mcm_btn"):
         st.session_state['categoria'] = "Aritmética"
-        st.session_state['subopcion'] = "División"
+        st.session_state['subopcion'] = "MCM"
+    if st.button("Número primo", key="primos_btn"):
+        st.session_state['categoria'] = "Aritmética"
+        st.session_state['subopcion'] = "Primos"
+    if st.button("Números coprimos", key="coprimos_btn"):
+        st.session_state['categoria'] = "Aritmética"
+        st.session_state['subopcion'] = "Coprimos"
 
 # Ruteo según selección
 categoria = st.session_state['categoria']
@@ -41,10 +47,14 @@ subopcion = st.session_state['subopcion']
 
 if categoria == "Home":
     home_view.render()
-elif categoria == "Aritmética" and subopcion == "Suma":
-    suma_view.render()
-elif categoria == "Aritmética" and subopcion == "División":
-    division_view.render()
+elif categoria == "Aritmética" and subopcion == "MCD":
+    mcd_view.render()
+elif categoria == "Aritmética" and subopcion == "MCM":
+    mcm_view.render()
+elif categoria == "Aritmética" and subopcion == "Primos":
+    primos_view.render()
+elif categoria == "Aritmética" and subopcion == "Coprimos":
+    coprimos_view.render()
 elif categoria == "Autores":
     autores_view.render()
 
