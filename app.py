@@ -1,5 +1,7 @@
 import streamlit as st
-from frontend import home_view, aritmetica_view
+from frontend.aritmetica import suma_view, division_view, aritmetica_view
+from frontend import home_view
+from frontend import autores_view
 
 # Configuración inicial de la app
 st.set_page_config(
@@ -7,15 +9,58 @@ st.set_page_config(
     layout="wide"
 )
 
-# ====== BARRA LATERAL ======
-st.sidebar.title("📂 Navegación")
-modulo = st.sidebar.selectbox(
-    "Selecciona un módulo",
-    ["Home", "Álgebra"]
-)
+# Inicializar session_state si no existe
+if 'categoria' not in st.session_state:
+    st.session_state['categoria'] = 'Home'
+if 'subopcion' not in st.session_state:
+    st.session_state['subopcion'] = 'Principal'
 
-# ====== RUTEO SIMPLE ======
-if modulo == "Home":
+# Forzar tema claro usando CSS
+st.markdown(
+    '''<style>
+    body, .stApp { background-color: #F5F6F7 !important; color: #18191A !important; }
+    .stSidebar { background-color: #FFFFFF !important; }
+    </style>''', unsafe_allow_html=True)
+
+# ====== BARRA LATERAL ======
+# st.sidebar.title("📂 Navegación")
+st.sidebar.image("assets/logo_unrc.png")
+
+# Sidebar con categorías y subopciones tipo dropdown
+with st.sidebar.expander("🏠 Home", expanded=True):
+    if st.button("Ir a Home", key="home_btn"):
+        st.session_state['categoria'] = "Home"
+        st.session_state['subopcion'] = "Principal"
+    if st.button("Autores", key="autores_btn"):
+        st.session_state['categoria'] = "Autores"
+
+with st.sidebar.expander("🧮 Aritmética", expanded=True):
+    if st.button("Suma", key="suma_btn"):
+        st.session_state['categoria'] = "Aritmética"
+        st.session_state['subopcion'] = "Suma"
+    if st.button("División", key="division_btn"):
+        st.session_state['categoria'] = "Aritmética"
+        st.session_state['subopcion'] = "División"
+
+
+
+# Ruteo según selección
+categoria = st.session_state['categoria']
+subopcion = st.session_state['subopcion']
+
+if categoria == "Home":
     home_view.render()
-elif modulo == "Álgebra":
-    aritmetica_view.render()
+elif categoria == "Aritmética" and subopcion == "Suma":
+    suma_view.render()
+elif categoria == "Aritmética" and subopcion == "División":
+    division_view.render()
+elif categoria == "Autores":
+    autores_view.render()
+
+# Footer
+st.markdown(
+    '''<hr style="margin-top:40px; margin-bottom:10px;">\
+    <div style="text-align:center; color: #888; font-size: 0.95em;">
+        Universidad Nacional Rosario Castellanos &copy; 2025<br>
+        Proyecto Calculadora de Ciencia de Datos
+    </div>''', unsafe_allow_html=True)
