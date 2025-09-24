@@ -1,3 +1,4 @@
+from numpy import False_
 import streamlit as st
 from frontend.aritmetica import suma_view, division_view, aritmetica_view
 from frontend import home_view
@@ -27,22 +28,20 @@ st.markdown(
 st.sidebar.image("assets/logo_unrc.png")
 
 # Sidebar con categorías y subopciones tipo dropdown
-with st.sidebar.expander("🏠 Home", expanded=True):
+with st.sidebar.expander("🏠 Home", expanded=False):
     if st.button("Ir a Home", key="home_btn"):
         st.session_state['categoria'] = "Home"
         st.session_state['subopcion'] = "Principal"
     if st.button("Autores", key="autores_btn"):
         st.session_state['categoria'] = "Autores"
 
-with st.sidebar.expander("🧮 Aritmética", expanded=True):
+with st.sidebar.expander("🧮 Aritmética", expanded=False):
     if st.button("Suma", key="suma_btn"):
         st.session_state['categoria'] = "Aritmética"
         st.session_state['subopcion'] = "Suma"
     if st.button("División", key="division_btn"):
         st.session_state['categoria'] = "Aritmética"
         st.session_state['subopcion'] = "División"
-
-
 
 # Ruteo según selección
 categoria = st.session_state['categoria']
