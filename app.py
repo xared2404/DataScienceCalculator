@@ -1,6 +1,5 @@
-from numpy import False_
 import streamlit as st
-from frontend.aritmetica import suma_view, division_view, aritmetica_view
+from frontend.aritmetica import suma_view, division_view
 from frontend import home_view
 from frontend import autores_view
 
