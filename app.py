@@ -5,7 +5,8 @@ from frontend import autores_view
 
 # Configuración inicial de la app
 st.set_page_config(
-    page_title="Calculadora Colaborativa", 
+    page_title="Calculadora Colaborativa",
+    page_icon="assets/favicon.ico",
     layout="wide"
 )
 
@@ -27,7 +28,7 @@ with st.sidebar.expander("🏠 Home", expanded=False):
     if st.button("Autores", key="autores_btn"):
         st.session_state['categoria'] = "Autores"
 
-with st.sidebar.expander("🧮 Aritmética", expanded=True):
+with st.sidebar.expander("🧮 Aritmética"):
     if st.button("Máximo Común Divisor (MCD)", key="mcd_btn"):
         st.session_state['categoria'] = "Aritmética"
         st.session_state['subopcion'] = "MCD"
