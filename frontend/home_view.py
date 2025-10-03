@@ -41,7 +41,8 @@ def render():
     st.markdown("""
     - 🧮 Áritmetica  
     """)
-    
+    st.markdown("""
+    - 🤖 machine_learning""")
     # Nota final
     st.info("""
         Selecciona un módulo en el menú lateral para comenzar.
