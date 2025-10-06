@@ -21,7 +21,7 @@ def render():
         # Selector de algoritmo de machine learning
         algoritmo = st.selectbox(
             "Selecciona el algoritmo de Machine Learning:",
-            ["RandomForest", "LogisticRegression", "SVM", "DecisionTree", "NaiveBayes", "SVD"]
+            ["RandomForest", "LogisticRegression", "SVM", "DecisionTree", "NaiveBayes", "SVD", "KMeans"]
         )
 
         if st.button("Entrenar modelo de clasificación"):  # Botón para ejecutar ML
@@ -30,6 +30,16 @@ def render():
             else:
                 if algoritmo == "SVD":
                     st.info("SVD es un método de reducción de dimensionalidad, no de clasificación directa. Implementa aquí la lógica si deseas usar SVD.")
+                elif algoritmo == "KMeans":
+                    from sklearn.cluster import KMeans
+                    X = df[feature_cols].dropna()
+                    st.write("Entrenando modelo KMeans (clustering)...")
+                    n_clusters = st.number_input("Número de clusters (K):", min_value=2, max_value=10, value=3)
+                    kmeans = KMeans(n_clusters=int(n_clusters), random_state=42)
+                    labels = kmeans.fit_predict(X)
+                    st.success("Modelo KMeans entrenado.")
+                    st.write("Etiquetas de cluster para las primeras filas:")
+                    st.write(labels[:10])
                 else:
                     st.write(f"Entrenando modelo {algoritmo}...")
                     acc, reporte = entrenar_modelo_clasificacion(df, feature_cols, target_col, modelo=algoritmo)
