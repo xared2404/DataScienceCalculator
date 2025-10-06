@@ -18,7 +18,8 @@ def entrenar_modelo_clasificacion(df, features, target, modelo="RandomForest"):
     y = datos[target]
     if X.empty or y.empty:
         raise ValueError("Las columnas de características o objetivo están vacías.")
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+    """entrenamiento del modelos"""
+    X_train, X_test, y_trainq y_test = train_test_split(X, y, test_size=0.2, random_state=42)
     if modelo == "RandomForest":
         clf = RandomForestClassifier()
     elif modelo == "LogisticRegression":
