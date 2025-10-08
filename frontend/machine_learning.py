@@ -16,14 +16,34 @@ def render():
 
         columnas = df.columns.tolist()
         target_col = st.selectbox("Selecciona la columna objetivo (variable a predecir):", columnas)
-        feature_cols = st.multiselect("Selecciona las columnas de entrada (features):", [col for col in columnas if col != target_col], default=[col for col in columnas if col != target_col])
+        feature_cols = st.multiselect(
+            "Selecciona las columnas de entrada (features):",
+            [col for col in columnas if col != target_col],
+            default=[col for col in columnas if col != target_col]
+        )
 
-        if st.button("Entrenar modelo de clasificación"):  # Botón para ejecutar ML
+        # Selector para el tipo de algoritmo
+        algoritmos = {
+            "Random Forest": "RandomForest",
+            "Regresión Logística": "LogisticRegression",
+            "SVM": "SVM",
+            "Árbol de Decisión": "DecisionTree",
+            "Naive Bayes": "NaiveBayes"
+        }
+        algoritmo_seleccionado = st.selectbox(
+            "Selecciona el algoritmo de clasificación:",
+            list(algoritmos.keys()),
+            index=0
+        )
+
+        if st.button("Entrenar modelo de clasificación"):
             if not feature_cols or not target_col:
                 st.warning("Debes seleccionar al menos una columna de entrada y una columna objetivo.")
             else:
-                st.write("Entrenando modelo...")
-                acc, reporte = entrenar_modelo_clasificacion(df, feature_cols, target_col)
+                st.write(f"Entrenando modelo {algoritmo_seleccionado}...")
+                acc, reporte = entrenar_modelo_clasificacion(
+                    df, feature_cols, target_col, modelo=algoritmos[algoritmo_seleccionado]
+                )
                 st.success(f"Precisión del modelo: {acc:.2f}")
                 st.text("Reporte de clasificación:")
                 st.text(reporte)
