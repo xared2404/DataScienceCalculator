@@ -17,7 +17,7 @@ def render():
         columnas = df.columns.tolist()
         target_col = st.selectbox("Selecciona la columna objetivo (variable a predecir):", columnas)
         feature_cols = st.multiselect(
-            "Selecciona las columnas de entrada (features):",
+            "Selecciona las columnas de entrada (features) numerica:",
             [col for col in columnas if col != target_col],
             default=[col for col in columnas if col != target_col]
         )
