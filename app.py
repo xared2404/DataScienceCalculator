@@ -43,7 +43,7 @@ with st.sidebar.expander("🧮 Aritmética"):
         st.session_state['subopcion'] = "Coprimos"
 
 with st.sidebar.expander("🤖 Machine Learning"):
-    if st.button("Algoritmos", key="ml_btn"):
+    if st.button("Algoritmos de aprendizaje automatico", key="ml_btn"):
         st.session_state['categoria'] = "Machine Learning"
         st.session_state['subopcion'] = "Algorimos de aprendizaje automático"
 categoria = st.session_state['categoria']
