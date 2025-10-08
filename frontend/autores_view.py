@@ -7,5 +7,5 @@ def render():
     """)
     st.markdown("""  **Autores (Por orden alfabético):**
    - [Miguel Evangelista](https://github.com/mevangelista-alvarado)
-    - [Jared Guerra](htttps://github.com/xared2404)
+    - [Jared Guerra Rojas](htttps://github.com/xared2404)
     """)
