@@ -62,8 +62,9 @@ elif categoria == "Aritmética" and subopcion == "Coprimos":
 elif categoria == "Autores":
     autores_view.render()
 elif categoria == "Machine Learning":
-    from frontend import machine_learning
-    machine_learning.render()
+    # renderiza la vista creada en frontend/machine_learning_view.py
+    from frontend import machine_learning_view
+    machine_learning_view.render()
 # Footer
 st.markdown(
     '''<hr style="margin-top:40px; margin-bottom:10px;">\
