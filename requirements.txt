@@ -1,6 +1,15 @@
 streamlit
+<<<<<<< HEAD
 pandas
 numpy
 scikit-learn
 plotly
 xgboost
+=======
+scikit-learn
+pandas
+numpy
+matplotlib
+seaborn
+
+>>>>>>> 9c942a68fc559fe1a8015317308c1337a1034fd0
