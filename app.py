@@ -2,6 +2,7 @@ import streamlit as st
 from frontend.aritmetica import mcd_view, mcm_view, primos_view, coprimos_view
 from frontend import home_view
 from frontend import autores_view
+from frontend import machine_learning as ml_view
 
 # Configuración inicial de la app
 st.set_page_config(
@@ -42,6 +43,11 @@ with st.sidebar.expander("🧮 Aritmética"):
         st.session_state['categoria'] = "Aritmética"
         st.session_state['subopcion'] = "Coprimos"
 
+with st.sidebar.expander("🤖 Machine Learning"):
+    if st.button("Ir a Machine Learning", key="ml_btn"):
+        st.session_state['categoria'] = "MachineLearning"
+        st.session_state['subopcion'] = "Principal"
+
 # Ruteo según selección
 categoria = st.session_state['categoria']
 subopcion = st.session_state['subopcion']
@@ -58,6 +64,8 @@ elif categoria == "Aritmética" and subopcion == "Coprimos":
     coprimos_view.render()
 elif categoria == "Autores":
     autores_view.render()
+elif categoria == "MachineLearning":
+    ml_view.render()
 
 # Footer
 st.markdown(
